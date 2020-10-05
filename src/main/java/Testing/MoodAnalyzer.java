@@ -6,17 +6,21 @@ public class MoodAnalyzer {
 	public MoodAnalyzer(String message) {
 		this.message = message;
 	}
-	public String analyseMood() throws MoodAnalysisException{
+	public String analyseMood() {
 		String mood = "";
-		if(message.toLowerCase().contains("sad")) {
-			mood = "SAD";
+		try {
+			if(message.toLowerCase().contains("sad")) {
+				mood = "SAD";
+			}
+			else {
+				mood = "HAPPY";
+			}
 		}
-		else if(message.toLowerCase().contains("happy")) {
-			mood = "HAPPY";
-		}
-		else {
-			throw new MoodAnalysisException("Invalid Mood");
+		catch(Exception exception) {
+			exception.printStackTrace();
 		}
 		return mood;
 	}
+
+
 }
