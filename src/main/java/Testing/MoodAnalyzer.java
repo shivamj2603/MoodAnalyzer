@@ -16,6 +16,9 @@ public class MoodAnalyzer {
 				mood = "HAPPY";
 			}
 		}
+		catch(NullPointerException exception) {
+			return "HAPPY";
+		}
 		catch(Exception exception) {
 			exception.printStackTrace();
 		}
