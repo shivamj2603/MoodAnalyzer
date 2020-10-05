@@ -42,7 +42,12 @@ class MoodAnalyzerTest {
 		MoodAnalysisException exception = assertThrows(MoodAnalysisException.class, () -> moodAnalyzer.analyseMood());
 		assertEquals(exception.getType() ,MoodAnalysisException.ExceptionType.Null);
 	}
-	
+	@Test
+	public void givenEmpty_shouldThrow_MoodAnalysisException() {
+		MoodAnalyzer moodAnalyzer = new MoodAnalyzer("");
+		MoodAnalysisException exception = assertThrows(MoodAnalysisException.class, () -> moodAnalyzer.analyseMood());
+		assertEquals(exception.getType() ,MoodAnalysisException.ExceptionType.Empty);
+	}
 
 
 }

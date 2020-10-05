@@ -1,9 +1,8 @@
 package Testing;
 
-
 public class MoodAnalysisException extends Exception {
 	enum ExceptionType {
-		Null,Empty,InvalidMood;
+		Null,Empty;
 	}
 	public ExceptionType type; 
 	public ExceptionType getType() {
